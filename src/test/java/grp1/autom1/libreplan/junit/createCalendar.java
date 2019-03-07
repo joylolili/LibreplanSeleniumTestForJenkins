@@ -26,19 +26,19 @@ public class createCalendar {
 	public void init() {
 
 		if (BROWSER.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "home/tomcat/.jenkins/workspace/Job4_Libreplan-Selenium-Chrome/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.get("http://localhost:8180/libreplan");
 		}
 		else if (BROWSER.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "home/tomcat/.jenkins/workspace/Job4_Libreplan-Selenium-Chrome/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.get("http://localhost:8180/libreplan");
 		}
 		else if (BROWSER.equals("internet_explorer")) {
-			System.setProperty("webdriver.ie.driver", "home/tomcat/.jenkins/workspace/Job4_Libreplan-Selenium-Chrome/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 			driver.manage().window().maximize();
 			driver.get("http://localhost:8180/libreplan");
