@@ -36,19 +36,19 @@ public class ProjectAndTaskTest {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get("http://localhost:8180/libreplan");
+			driver.get("http://192.168.102.156:8090/libreplan");
 		}
 		else if (BROWSER.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			driver.get("http://localhost:8180/libreplan");
+			driver.get("http://192.168.102.156:8090/libreplan");
 		}
 		else if (BROWSER.equals("internet_explorer")) {
 			System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 			driver.manage().window().maximize();
-			driver.get("http://localhost:8180/libreplan");
+			driver.get("http://192.168.102.156:8090/libreplan");
 		}
 	}
 
