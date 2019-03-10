@@ -128,7 +128,7 @@ public class homePage {
 //		boutonProjetsLabel.click();
 		
 		Actions actions = new Actions(driver);
-		actions.click(boutonCalendrier)
+		actions.moveToElement(boutonCalendrier)
 				.moveToElement(boutonProjetsLabel)
 				.click()
 				.build()
