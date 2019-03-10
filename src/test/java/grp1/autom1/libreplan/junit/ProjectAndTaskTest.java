@@ -51,6 +51,8 @@ public class ProjectAndTaskTest {
 		}
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.MINUTES);
+		driver.manage().timeouts().setScriptTimeout(20, TimeUnit.MINUTES);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.MINUTES);
 		driver.get("http://localhost:8180/libreplan");
 	}
 
