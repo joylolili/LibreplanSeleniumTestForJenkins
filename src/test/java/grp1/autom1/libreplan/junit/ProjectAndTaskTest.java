@@ -32,9 +32,9 @@ public class ProjectAndTaskTest {
 	@Before
 	public void openBrowser() {
 
-		//BROWSER = "chrome";
+//		BROWSER = "chrome";
 //		BROWSER = "firefox";
-		//BROWSER = "chrome";
+//		BROWSER = "ie";
 		
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -45,7 +45,7 @@ public class ProjectAndTaskTest {
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 		}
-		else if (BROWSER.equalsIgnoreCase("internet_explorer")) {
+		else if (BROWSER.equalsIgnoreCase("ie")) {
 			System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
@@ -212,7 +212,7 @@ public class ProjectAndTaskTest {
 		
 		
 		ListeProjetsPage lpp = pageDetail3.accesPageListeProjets();
-		
+		Thread.sleep(1000);
 		assertTrue("", lpp.menuVerticalDetailProjetAffiche.isDisplayed());
 		assertTrue("", lpp.projetTestCree.isDisplayed());
 
