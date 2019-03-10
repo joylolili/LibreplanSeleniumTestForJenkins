@@ -32,7 +32,7 @@ public class ProjectAndTaskTest {
 	@Before
 	public void openBrowser() {
 
-		BROWSER = "chrome";
+		//BROWSER = "chrome";
 		
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
