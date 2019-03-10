@@ -123,7 +123,7 @@ public class ProjectAndTaskTest {
 		//Renseignement des champs pour la creation d'un projet
 		String nom = "PROJET_TEST1_";
 		String modele = "";
-		String code = "PRJTEST001";
+		String code = "_";
 		String client = "";
 		String calendrier = pp.calendrier.getText();
 		
@@ -158,8 +158,8 @@ public class ProjectAndTaskTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 
-		//assertTrue("Le menu affiché n'est pas 'Détail du projet'", pageDetail.menuVerticalDetailProjetAffiche.isDisplayed());
-		//assertTrue("L'onglet affiché n'est pas 'WBS (tâches)'", pageDetail.ongletHorizontalWbsAffiche.isDisplayed());
+		assertTrue("Le menu affiché n'est pas 'Détail du projet'", pageDetail.menuVerticalDetailProjetAffiche.isDisplayed());
+		assertTrue("L'onglet affiché n'est pas 'WBS (tâches)'", pageDetail.ongletHorizontalWbsAffiche.isDisplayed());
 
 		//Présence des elements du menu vertival
 		assertTrue("L'icone 'Planification des projets' n'est pas présent dans le menu Vertical", pageDetail.menuVerticalPlanificationprojetsPresent.isDisplayed());
