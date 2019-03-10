@@ -50,6 +50,7 @@ public class ProjectAndTaskTest {
 			driver = new InternetExplorerDriver();
 		}
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.MINUTES);
 		driver.get("http://localhost:8180/libreplan");
 	}
 
