@@ -5,6 +5,7 @@ package grp1.autom1.libreplan.pageobject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -122,9 +123,17 @@ public class homePage {
 			.elementToBeClickable(By.xpath("//div[@id='ganttpanel']")));
 		homePanel.isEnabled();
 		
-		boutonCalendrier.click();
-		boutonCalendrier.click();
-		boutonProjetsLabel.click();
+//		boutonCalendrier.click();
+//		boutonCalendrier.click();
+//		boutonProjetsLabel.click();
+		
+		Actions actions = new Actions(driver);
+		actions.click(boutonCalendrier)
+				.moveToElement(boutonProjetsLabel)
+				.click()
+				.build()
+				.perform();
+		
 		return PageFactory.initElements(this.driver, ListeProjetsPage.class);
 	}
 
