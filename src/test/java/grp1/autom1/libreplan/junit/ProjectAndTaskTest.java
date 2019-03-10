@@ -156,6 +156,7 @@ public class ProjectAndTaskTest {
 
 
 		ProjectDetails pageDetail = pp.validerProjet();
+		Thread.sleep(1000);
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -179,6 +180,8 @@ public class ProjectAndTaskTest {
 
 		//annuler l'edition (1/4)
 		PopUpConfirmerFenetreSortie popUp = pageDetail.annulerEdition();
+		Thread.sleep(1000);
+		
 		assertTrue("La Pop Up n'est pas présente", popUp.fenetrePopUp.isDisplayed());
 		assertTrue("Le bouton 'Annuler' n'est pas présent", popUp.boutonAnnulerPopUp.isDisplayed());
 		assertTrue("Le bouton 'OK' n'est pas présent", popUp.boutonOkPopUp.isDisplayed());
@@ -186,13 +189,16 @@ public class ProjectAndTaskTest {
 
 		//annuler l'edition (2/4)
 		ProjectDetails pageDetail2 = popUp.annulerPopUp();
-
+		Thread.sleep(1000);
+		
 		assertTrue("Le menu affiché n'est pas 'Détail du projet'", pageDetail2.menuVerticalDetailProjetAffiche.isDisplayed());
 		assertTrue("L'onglet affiché n'est pas 'WBS (tâches)'", pageDetail2.ongletHorizontalWbsAffiche.isDisplayed());
 
 
 		//annuler l'edition (3/4)
 		PopUpConfirmerFenetreSortie popUp2 = pageDetail2.annulerEdition();	
+		Thread.sleep(1000);
+		
 		assertTrue("La Pop Up n'est pas présente", popUp2.fenetrePopUp.isDisplayed());
 		assertTrue("Le bouton 'Annuler' n'est pas présent", popUp2.boutonAnnulerPopUp.isDisplayed());
 		assertTrue("Le bouton 'OK' n'est pas présent", popUp2.boutonOkPopUp.isDisplayed());
@@ -200,7 +206,7 @@ public class ProjectAndTaskTest {
 
 		//annuler l'edition (4/4)
 		homePage pageDetail3 = popUp2.validerPopUp();
-
+		Thread.sleep(1000);
 		assertTrue("Le menu affiché n'est pas 'Détail du projet'", pageDetail3.pagePlanificationProjetActive.isDisplayed());
 		
 		//revoir la non présence de l'élément
