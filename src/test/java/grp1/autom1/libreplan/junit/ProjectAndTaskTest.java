@@ -32,16 +32,16 @@ public class ProjectAndTaskTest {
 	@Before
 	public void openBrowser() {
 
-		if (BROWSER.equals("chrome")) {
+		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			driver = new ChromeDriver();
 		}
-		else if (BROWSER.equals("firefox")) {
+		else if (BROWSER.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 		}
-		else if (BROWSER.equals("internet_explorer")) {
+		else if (BROWSER.equalsIgnoreCase("internet_explorer")) {
 			System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
@@ -119,11 +119,16 @@ public class ProjectAndTaskTest {
 
 
 		//Renseignement des champs pour la creation d'un projet
-		String nom = "PROJET_TEST1";
+		String nom = "PROJET_TEST1_";
 		String modele = "";
 		String code = "PRJTEST001";
 		String client = "";
 		String calendrier = pp.calendrier.getText();
+		
+		// selon navigateur
+		String chrome = "Chrome";
+		String firefox = "Firefox";
+		String ie = "IE";
 
 		//Entrees manuelle des dates
 		String dateDeDebut = "28 juil. 2018";
@@ -133,6 +138,16 @@ public class ProjectAndTaskTest {
 		pp.dateDebutField.clear();
 		pp.echeancheField.clear();
 
+		if (BROWSER.equalsIgnoreCase("chrome")) {
+			nom = nom + chrome;
+			code = code + chrome;
+		}else if (BROWSER.equalsIgnoreCase("firefox")) {
+			nom = nom + firefox;
+			code = code + firefox;
+		}else if (BROWSER.equalsIgnoreCase("ie")) {
+			nom = nom + ie ;
+			code = code + ie ;
+		}
 		pp.remplirLesChamps(nom, modele, code, dateDeDebut, echeance, client, calendrier);
 
 
