@@ -31,8 +31,9 @@ public class PopUpConfirmerFenetreSortie {
 	}
 	
 	
-	public homePage validerPopUp() {
+	public homePage validerPopUp() throws InterruptedException {
 		boutonOkPopUp.click();
+		Thread.sleep(500);
 		return PageFactory.initElements(this.driver, homePage.class);
 		
 	}
