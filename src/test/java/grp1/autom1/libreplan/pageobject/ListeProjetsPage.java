@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class ListeProjetsPage {
 
-	@FindBy(xpath="//span[@class='perspective-active  orders z-button']/descendant::td[contains(text(), 'Liste des projets')]")
+	@FindBy(xpath="//td[contains(text(), 'Liste des projets')]")
 	public WebElement menuVerticalDetailProjetAffiche;
 	
-	@FindBy(xpath="//span[contains(text(), 'PROJET_TEST1')]")
+	@FindBy(xpath="//span[contains(text(), 'PROJET_TEST')]")
 	public WebElement projetTestCree;
 	
 	

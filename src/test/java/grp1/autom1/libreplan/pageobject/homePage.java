@@ -129,7 +129,7 @@ public class homePage {
 		
 		Actions actions = new Actions(driver);
 		actions.moveToElement(boutonCalendrier)
-				.moveToElement(driver.findElement(By.xpath("//a[@href='/libreplan/planner/index.zul;orders_list']")))
+				.moveToElement(boutonProjetsLabel)
 				.click()
 				.build()
 				.perform();

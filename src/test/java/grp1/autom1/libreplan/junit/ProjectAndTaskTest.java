@@ -35,7 +35,7 @@ public class ProjectAndTaskTest {
 
 //		BROWSER = "chrome";
 //		BROWSER = "firefox";
-//		BROWSER = "ie";
+		BROWSER = "ie";
 		
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
