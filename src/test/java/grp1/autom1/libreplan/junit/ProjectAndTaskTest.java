@@ -224,9 +224,17 @@ public class ProjectAndTaskTest {
 		
 		//Vérification de la création du projet
 		
+		ListeProjetsPage lpp;
+		if (BROWSER.equalsIgnoreCase("ie")) {
+			pageDetail3.boutonCalendrier.click();
+			pageDetail3.boutonCalendrier.click();
+			pageDetail3.boutonProjetsLabel.click();
+			lpp = new ListeProjetsPage(driver);
+		}else {
+			lpp = pageDetail3.accesPageListeProjets();
+		}
 		
-		ListeProjetsPage lpp = pageDetail3.accesPageListeProjets();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertTrue("", lpp.menuVerticalDetailProjetAffiche.isDisplayed());
 		assertTrue("", lpp.projetTestCree.isDisplayed());
 
