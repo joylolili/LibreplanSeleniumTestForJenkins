@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.support.PageFactory;
 
 import grp1.autom1.libreplan.pageobject.ListeProjetsPage;
@@ -27,7 +28,7 @@ public class ProjectAndTaskTest {
 	WebDriver driver;
 	
 	private String BROWSER=System.getProperty("browser");
-
+	private Integer TIMEOUT=500000;
 
 	@Before
 	public void openBrowser() {
@@ -53,6 +54,10 @@ public class ProjectAndTaskTest {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.MINUTES);
 		driver.manage().timeouts().setScriptTimeout(5000, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(600000, TimeUnit.SECONDS);
+		
+		InternetExplorerOptions ieOption = new InternetExplorerOptions();
+		ieOption.setCapability("command-timout", TIMEOUT);
+		
 		driver.get("http://localhost:8180/libreplan");
 	}
 
