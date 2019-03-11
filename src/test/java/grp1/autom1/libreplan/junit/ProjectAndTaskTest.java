@@ -131,7 +131,7 @@ public class ProjectAndTaskTest {
 
 
 		//Renseignement des champs pour la creation d'un projet
-		String nom = "PROJET_TEST1_";
+		String nom = "PROJET_TEST_";
 		String modele = "";
 		String code = "_";
 		String client = "";
@@ -140,7 +140,7 @@ public class ProjectAndTaskTest {
 		// selon navigateur
 		String chrome = "Chrome";
 		String firefox = "Firefox";
-		String ie = "IE";
+		String ie = "IE";		
 
 		//Entrees manuelle des dates
 		String dateDeDebut = "28 juil. 2018";
