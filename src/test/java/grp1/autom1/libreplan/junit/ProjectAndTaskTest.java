@@ -29,13 +29,14 @@ public class ProjectAndTaskTest {
 	
 	private String BROWSER=System.getProperty("browser");
 	private Integer TIMEOUT=500000;
+	private String URL=System.getProperty("libreplanurl");
 
 	@Before
 	public void openBrowser() {
 
 //		BROWSER = "chrome";
 //		BROWSER = "firefox";
-		BROWSER = "ie";
+//		BROWSER = "ie";
 		
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -58,7 +59,7 @@ public class ProjectAndTaskTest {
 		InternetExplorerOptions ieOption = new InternetExplorerOptions();
 		ieOption.setCapability("command-timout", TIMEOUT);
 		
-		driver.get("http://localhost:8180/libreplan");
+		driver.get("http://" + URL + ":8180/libreplan");
 	}
 
 	@After
